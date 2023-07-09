@@ -31,7 +31,7 @@ export const crearColor = async (req,res)=>{
         })
     }catch(error){
         console.log(error);
-        req.status(404).json({
+        res.status(404).json({
             mensaje:'Error al crear el color'
         });
     }
@@ -39,7 +39,7 @@ export const crearColor = async (req,res)=>{
 
 export const borrarColor = async(req,res)=>{
     try{
-        Color.findByIdAndRemove(req.params.id);
+        await Color.findByIdAndDelete(req.params.id);
         res.status(201).json({
             mensaje:'Borrado exitosamente'
         })
@@ -52,11 +52,12 @@ export const borrarColor = async(req,res)=>{
 
 export const modificarColor = async(req,res)=>{
     try{
-        Color.findOneAndUpdate(req.params.id,req.body)
+        await Color.findByIdAndUpdate(req.params.id,req.body)
         res.status(201).json({
             mensaje:'Exito al modificiar el color'
         })
     }catch(error){
+        console.log(error)
         res.status(404).json({
             mensaje:'Error al modificar Color'
         })

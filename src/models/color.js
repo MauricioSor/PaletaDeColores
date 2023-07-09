@@ -15,5 +15,5 @@ const colorSchema = new Schema({
     }
 });
 
-const Color = model('model',colorSchema);
+const Color = model('color',colorSchema);
 export default Color
