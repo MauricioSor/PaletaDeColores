@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "babel-node index.js",
+    "dev": "nodemon --exec babel-node index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Mauricio Soria",
   "license": "ISC",
   "dependencies": {
-    "babel-cli": "^6.26.0",
     "babel-node": "^0.0.1-security",
     "babel-preset-env": "^1.7.0",
     "cors": "^2.8.5",
@@ -19,5 +19,8 @@
     "express-validator": "^7.0.1",
     "mongoose": "^7.3.2",
     "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
   }
 }
